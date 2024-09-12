@@ -2,7 +2,6 @@
 const PI = 3.1415;
 const radius = 5;
 const area = PI * radius * radius;
-console.log("area", area);
 let week = 1;
 let plantCount = 20;
 const plantSize = 0.8;
@@ -20,10 +19,10 @@ if (totalSize > upperLimit) {
   console.log("Monitored");
 } else {
   console.log("Planted");
+  plantCount += plantCount;
 }
 week = 2;
 console.log(`Week ${week}:`);
-plantCount += plantCount;
 totalSize = plantCount * plantSize;
 console.log(`Total plant size is ${totalSize}`);
 if (totalSize > upperLimit) {
@@ -32,10 +31,10 @@ if (totalSize > upperLimit) {
   console.log("Monitored");
 } else {
   console.log("Planted");
+  plantCount += plantCount;
 }
 week = 3;
 console.log(`Week ${week}:`);
-plantCount += plantCount;
 totalSize = plantCount * plantSize;
 console.log(`Total plant size is ${totalSize}`);
 if (totalSize > upperLimit) {
@@ -44,6 +43,7 @@ if (totalSize > upperLimit) {
   console.log("Monitored");
 } else {
   console.log("Planted");
+  plantCount += plantCount;
 }
 
 // if there are 100 plants and an expanded garden
