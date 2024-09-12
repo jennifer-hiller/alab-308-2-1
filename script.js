@@ -13,6 +13,7 @@ console.log("lowerLimit", lowerLimit, "upperLimit", upperLimit);
 
 // check to see what the status is on the plants and if they need to be pruned, monitored, or planted
 console.log(`Week ${week}:`);
+console.log(`Total plant size is ${totalSize}`);
 if (totalSize > upperLimit) {
   console.log("Pruned");
 } else if (totalSize > lowerLimit && totalSize < upperLimit) {
@@ -24,6 +25,7 @@ week = 2;
 console.log(`Week ${week}:`);
 plantCount += plantCount;
 totalSize = plantCount * plantSize;
+console.log(`Total plant size is ${totalSize}`);
 if (totalSize > upperLimit) {
   console.log("Pruned");
 } else if (totalSize > lowerLimit && totalSize < upperLimit) {
@@ -35,6 +37,7 @@ week = 3;
 console.log(`Week ${week}:`);
 plantCount += plantCount;
 totalSize = plantCount * plantSize;
+console.log(`Total plant size is ${totalSize}`);
 if (totalSize > upperLimit) {
   console.log("Pruned");
 } else if (totalSize > lowerLimit && totalSize < upperLimit) {
@@ -56,7 +59,6 @@ plantCount += plantCount;
 plantCount += plantCount;
 plantCount += plantCount;
 plantCount += plantCount;
-plantCount += plantCount;
 totalSize = plantCount * plantSize;
 console.log(
   `You will need a ${
@@ -68,9 +70,11 @@ console.log(
 try {
   plantCount = 100;
   totalSize = plantCount * plantSize;
-  throw `you would need a ${
-    totalSize / PI
-  } meter radius for ${plantCount} plants`;
+  if (totalSize > upperLimit) {
+    throw `you would need a ${
+      totalSize / PI
+    } meter radius for ${plantCount} plants`;
+  }
 } catch (e) {
   console.error(e);
 }
